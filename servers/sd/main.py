@@ -3,8 +3,11 @@ from dotenv import load_dotenv
 from system_prompt import SYSTEM_PROMPT
 
 # import plain functions
-from tools.metadata_tools import load_sap_metadata as _load_sap_metadata,
- get_sales_order_metadata as _get_sales_order_metadata
+from tools.metadata_tools import (
+    load_sap_metadata as _load_sap_metadata,
+    get_sales_order_metadata as _get_sales_order_metadata,
+)
+
 from tools.query_tools import query_sales_orders as _query_sales_orders
 # from tools.auth_tools import set_sap_credentials as _set_sap_credentials  # if you use it
 
