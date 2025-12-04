@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  mm_server:
+    build: ./servers/mm
+    container_name: mm_server
+    ports:
+      - "8001:8000"
+    environment:
+      - ENV=prod
+
+  sd_server:
+    build: ./servers/sd
+    container_name: sd_server
+    ports:
+      - "8002:8000"
+    environment:
+      - ENV=prod

@@ -46,5 +46,9 @@ def query_billing_documents(entity_set: str, filter: str = "",
 
 
 # ─────────────────────────────────────────────
+@app.get("/sse")
+async def sse():
+    return sse_client(url="http://localhost:8001/sse")
 
-mcp.run()
+if __name__ == "__main__":
+    mcp.run(transport="sse")

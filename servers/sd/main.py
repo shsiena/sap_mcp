@@ -43,5 +43,10 @@ def query_sales_orders(entity_set: str, filter: str = "", select: str = "", top:
 # def set_sap_credentials(username: str, password: str, metadata_url: str) -> str:
 #     return _set_sap_credentials(username, password, metadata_url)
 
+@app.get("/sse")
+async def sse():
+    return sse_client(url="http://localhost:8002/sse")
 
-mcp.run()
+
+if __name__ == "__main__":
+    mcp.run(transport="sse")
